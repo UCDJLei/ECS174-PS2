@@ -1,0 +1,29 @@
+% gigput 
+I1 = imread('wdc1.jpg'); 
+I2 = imread('wdc2.jpg'); 
+n = 12;
+
+
+figure, imshow(I1);
+coordinates_1 = zeros(2,n);
+hold on
+
+for i=1:n
+[x, y] = ginput(1);
+coordinates_1(:,i) = [x, y];
+plot(coordinates_1(:,1), coordinates_1(:,2), '+');
+end
+hold off
+
+
+
+figure, imshow(I2);
+coordinates = zeros(2,n);
+hold on
+
+for i=1:n
+[x, y] = ginput(1);
+coordinates(:,i) = [x, y];
+plot(coordinates(:,1), coordinates(:,2), '+');
+end
+hold off
